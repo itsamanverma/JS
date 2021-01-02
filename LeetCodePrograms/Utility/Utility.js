@@ -18,6 +18,11 @@ module.exports = {
         const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
         return rl;
     },
+    /* twoSum method is give the index value of given array for the wanted target  
+     * 
+     * @param  : array ,target
+     * @return : array  
+     */
     twoSum(arr, target) {
         let map = new Map;
         for (var i = 0; i < arr.length; i++) {
