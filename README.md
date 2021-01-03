@@ -7,4 +7,4 @@
 #### Different folder with different concept
 
 ##### Function_Program : functional concept of javascript like , array, string, readline-sync concepts
-##### LeetCodeProgram : Solution of the coding the question ! 
+##### LeetCodeProgram : Solution of the different coding the question ! 
