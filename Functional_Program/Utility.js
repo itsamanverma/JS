@@ -75,5 +75,20 @@ module.exports = {
             console.log("Please input less than 31");
         }
     },
-
+    /*
+    * @description : To generate the nth harmonic numbers by taking input from user.
+    * @function : Harmonic function takes user input and give nth hormonic no of user given input.
+    */
+    nthHormonic(Number) {
+        if (Number != 0) {
+            let sum = 0;
+            for (let i = 0; i < Number.length; i++) {
+                 
+                sum = sum + 1 / i;
+            }
+            console.log("Harmonic Number of "+ Number+"th Number"+ sum);
+        }else{
+            console.log("Please Enter the correct Number");
+        }
+    },
 }
