@@ -1,3 +1,5 @@
+const { constants } = require('buffer');
+const { log } = require('console');
 var read = require('readline-sync');
 
 module.exports = {
@@ -32,5 +34,77 @@ module.exports = {
             }
             map.set(arr[i], i);
         }
+    },
+    /* solution 1*/
+    VowelConsonants(s) {
+        const userArray = [...s];
+        const result = [];
+
+        const newArray = userArray.reduce((target, item) => {
+            switch (item) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    target[0].push(item);
+                    break;
+                default:
+                    target[1].push(item);
+                    break;
+            }
+
+            return target;
+        }, [[], []]);
+        console.log("newArray:", newArray);
+        newArray.reduce((target, item) => {
+            target.push(
+                item.reduce((target, item) => {
+                    result.push(item);
+
+                    return target;
+                }, [])
+            );
+            return target;
+        }, []);
+
+        result.map(item => console.log(item));
+    },
+    /* Solution 2  */
+    VowelConsonants1(s) {
+        const vowel = ['a', 'e', 'i', 'o', 'u'];
+        let { vowels, consonants } = (s.split('') || []).reduce((target, item) => {
+            target[vowel.includes(item) ? 'vowels' : 'consonants'].push(item);
+
+            return target;
+        }, { vowels: [], consonants: [] });
+
+        vowels.concat(consonants).forEach((item) => {
+            console.log(item);
+        });
+    },
+    /* Solution 3 */
+    VowelConsonants2(s) {
+        const userArray = [...s];
+        const result = [];
+
+        const newArray = userArray.reduce((target, item) => {
+            switch (item) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    target['vowels'].push(item);
+                    break;
+                    
+                default:
+                    target['consonants'].push(item);
+                    break;
+            }
+            return target;
+        },{ vowels: [], consonants: []});
+
+        result = [...newArray['vowels'], ...newArray['consonants']].map(item => console.log(item))
     }
 }

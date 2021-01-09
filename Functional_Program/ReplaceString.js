@@ -20,7 +20,7 @@ let userInput = utility.input();/* calling the input method from utility */
 
 let replaceString = () => {
     userInput.question('Enter Your Name? ', (answer) => {
-        if (answer >= 0) {
+        if (answer >= 0 && answer < 3) {
             console.log('Enter the valid Name Input..!');
         } else {
             utility.replace(answer);
