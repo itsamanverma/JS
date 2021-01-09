@@ -27,7 +27,7 @@ let VowelsAndConsonants = () => {
             if (string >= 0 && string < 3) {
                 console.log('Enter the Valid Input String ...!');
             } else {
-                console.log("VowelsAndConsonants: ", utility.VowelConsonants2(string));
+                console.log("VowelsAndConsonants: ", utility.VowelConsonants(string));
                 userStringInput.close();
             }
         } catch (error) {
