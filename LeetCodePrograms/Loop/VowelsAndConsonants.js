@@ -30,7 +30,7 @@ let VowelsAndConsonants = () => {
                 console.log("VowelsAndConsonants: ", utility.VowelConsonants(string));
                 userStringInput.close();
             }
-        } catch (error) {
+        } catch (error) {   
             console.log("error", error);
         }
     })
