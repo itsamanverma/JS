@@ -120,4 +120,12 @@ module.exports = {
         let re = (/^(Mr|Mrs|Ms|Dr|Er)(\.)([a-zA-Z])+$/g);
         console.log(re.test(s));
     },
-}
+    /*  */
+    trycatch(str) {
+        if (typeof (str) === "string") {
+            console.log(str.split('').reverse().join(''));
+        } else {
+            console.log('str.split is not a funtion' + '\n' + str);
+        }
+    }
+}   
