@@ -97,14 +97,27 @@ module.exports = {
                 case 'u':
                     target['vowels'].push(item);
                     break;
-                    
+
                 default:
                     target['consonants'].push(item);
                     break;
             }
             return target;
-        },{ vowels: [], consonants: []});
+        }, { vowels: [], consonants: [] });
 
         result = [...newArray['vowels'], ...newArray['consonants']].map(item => console.log(item))
-    }
+    },
+    Regax(s) {
+        // Declare a RegExp object variable named 're'
+        // It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
+        let re = (/^([aieou]).+\1$/g);
+        console.log(re.test(s));
+    },
+    Regax1(s) {
+        // Declare a RegExp object variable named 're'
+        // It must match a string that starts with 'Mr.', 'Mrs.', 'Ms.', 'Dr.', or 'Er.',
+        // followed by one or more letters.
+        let re = (/^(Mr|Mrs|Ms|Dr|Er)(\.)([a-zA-Z])+$/g);
+        console.log(re.test(s));
+    },
 }
