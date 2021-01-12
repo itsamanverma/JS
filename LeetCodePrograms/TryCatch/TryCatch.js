@@ -2,9 +2,10 @@
  *  Execution     :  1. default node  cmd> node TryCatch.js
  *                   2. if nodemon installed  cmd> nodenom TryCatch.js
  *
- *  Purpose       :  Complete the function in the editor below by returning a RegExp object, re,
- *                   that matches any string s that begins and ends with the same vowel.
- *                   Recall that the English vowels are a, e, i, o, and u.
+ *  Purpose       :  Complete the reverseString function; it has one parameter, . You must perform the following actions:
+ *                   Try to reverse string  using the split, reverse, and join methods.
+ *                   If an exception is thrown, catch it and print the contents of the exception's  on a new line.
+ *                   Print  on a new line. If no exception was thrown, then this should be the reversed string; if an exception was thrown, this should be the original string.
  *
  *  @description  :
  * 
