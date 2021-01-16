@@ -23,6 +23,9 @@ module.exports = {
     /*  */
     sortArray(arr) {
         const result = arr.map(item => Math.pow(item, 2));
+        result.sort(function (a, b) {
+            return a - b;
+        });
         console.log(result);
     }
 }

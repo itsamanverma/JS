@@ -3,7 +3,7 @@
  *                   2. if nodemon installed  cmd> nodenom SortArray.js
  *
  *  Purpose       :  Given an array of integers A sorted in non-decreasing order,
- *                   return of the squares of each number, also in sorted non- deceasing order.
+ *                   return of the squares of each number, also in sorted non-deceasing order.
  * 
  *  @description   : @param {number[]} nums ,@return {number[]}
  *
