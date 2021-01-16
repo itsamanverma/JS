@@ -16,3 +16,23 @@
  *  @since        : 12-01-2021
  *
  *************************************************************/
+
+const utility = require('../Utility/Utility.js');
+const userInput = utility.input();
+
+let Throw = () => {
+    userInput.question('Enter the Number to show the Custom Error base on Condition ', (num) => {
+        try {
+            console.log(typeof (Number(num)));
+            console.log(num);
+            if (typeof (Number(num)) === 'number') {
+                console.log(utility.Throw(num));
+            } else {
+                throw Error("Enter the Valid Number..!");
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    });
+}
+Throw();

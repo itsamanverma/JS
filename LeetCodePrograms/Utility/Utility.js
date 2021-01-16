@@ -1,5 +1,3 @@
-const { constants } = require('buffer');
-const { log } = require('console');
 var read = require('readline-sync');
 
 module.exports = {
@@ -127,5 +125,15 @@ module.exports = {
         } else {
             console.log('str.split is not a funtion' + '\n' + str);
         }
+    },
+    /*  */
+    Throw(num) {
+        if (num === 0) {
+            throw Error("Zero Error");
+        }
+        if (num < 0) {
+            throw Error('Negative Error');
+        }
+        return "YES";
     }
 }   
