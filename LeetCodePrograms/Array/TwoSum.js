@@ -22,7 +22,7 @@ let arr = utility.inputreadLineArray();
 console.log("array is ", arr);
 const userInput = utility.input();
 let twoSum = () => {
-    userInput.question("Enter the target value you want", (target) => {
+    userInput.question("Enter the target value you want ", (target) => {
         try {
             console.log("target is ", target);
             if (target >= 0) {
