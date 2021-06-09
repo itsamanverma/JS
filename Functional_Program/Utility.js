@@ -36,8 +36,8 @@ module.exports = {
         var headPer = (head / flip) * 100;
         var tailPer = (tail / flip) * 100;
 
-        console.log("Percentage of head Occurance is " + headPer);
-        console.log("Percentage of tail Occurance is " + tailPer);
+        console.log("Percentage of head Occurance is " + headPer + "%");
+        console.log("Percentage of tail Occurance is " + tailPer + "%");
     },
     /******************************************************************************
      *  @description : checkLeapYear is the function for check the given year is leap year or nt
@@ -83,11 +83,11 @@ module.exports = {
         if (Number != 0) {
             let sum = 0;
             for (let i = 0; i < Number.length; i++) {
-                 
+
                 sum = sum + 1 / i;
             }
-            console.log("Harmonic Number of "+ Number+"th Number"+ sum);
-        }else{
+            console.log("Harmonic Number of " + Number + "th Number" + sum);
+        } else {
             console.log("Please Enter the correct Number");
         }
     },
