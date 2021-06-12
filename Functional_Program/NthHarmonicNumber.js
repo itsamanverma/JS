@@ -19,7 +19,7 @@ const utility = require('./Utility.js');
 const userInput = utility.input();
 
 let nthHarmonic = () => {
-    userInput.question('Please enter value for harmonic value', (Number) => {
+    userInput.question('Please enter value for harmonic value ', (Number) => {
         if (Number >= 0) {
             utility.nthHarmonic(Number);
         } else {

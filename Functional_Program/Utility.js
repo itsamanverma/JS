@@ -79,14 +79,14 @@ module.exports = {
     * @description : To generate the nth harmonic numbers by taking input from user.
     * @function : Harmonic function takes user input and give nth hormonic no of user given input.
     */
-    nthHormonic(Number) {
+    nthHarmonic(Number) {
         if (Number != 0) {
             let sum = 0;
-            for (let i = 0; i < Number.length; i++) {
+            for (let i = 1; i <= Number; i++) {
 
                 sum = sum + 1 / i;
             }
-            console.log("Harmonic Number of " + Number + "th Number" + sum);
+            console.log("Harmonic Number of " + Number + "th Number " + sum);
         } else {
             console.log("Please Enter the correct Number");
         }
