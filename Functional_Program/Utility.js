@@ -11,8 +11,8 @@ module.exports = {
      * @param : username
      ******************************************************************************/
     replace(username) {
-        var regex = /^[^* | \ " : < > [ ] { } ` \ ( ) '' ; @ & $]+$/;
-        if (username.length >= 3 && username.match(regex)) {
+        let regexp = /[a-d]/gi;
+        if (username.length >= 3 && username.match(regexp)) {
             console.log("Hello " + username + " How are you ?");
         } else {
             console.log("Enter the Valid UserName..!");
