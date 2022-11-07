@@ -1,6 +1,6 @@
 /************************************************************
- *  Execution     :  1. default node  cmd> node ReplaceString.js
- *                   2. if nodemon installed  cmd> nodenom ReplaceString.js
+ *  Execution     :  1. default node  cmd> node PrimeFactor.js
+ *                   2. if nodemon installed  cmd> nodenom PrimeFactor.js
  *
  *  Purpose       :  Computes the prime factorization of N using brute force
  *

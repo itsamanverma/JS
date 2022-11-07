@@ -1,3 +1,5 @@
+const read = require('readline-sync');
+
 module.exports = {
 
     input() {
@@ -94,7 +96,7 @@ module.exports = {
 
     /**
      * @description : calculate the prime factor of number 
-     * @function : 
+     * @function : calPrimeFactor function takes user input and give prime factor no of user given input.
      */
     calPrimeFactor(n) {
         while(n % 2 == 0 ) {
@@ -113,5 +115,23 @@ module.exports = {
         if (n > 2) {
             console.log(n + " ");            
         }
-    }
+    },
+    /**
+     * @description : create the module to take user 2d input array
+     * @function : 
+     */
+     user2DArrayInput() {
+        let row = read.question('How many row you want in 2d Array ');
+        let col = read.question('How many col you want in 2d Array ');
+        let arr = new Array();
+
+        console.log('Enter ' + row * col + ' Element in the 2d array ');
+        for (let i = 0; i < row; i++) {
+            arr[i] = [];
+            for (let j = 0; j < col; j++) {
+               arr[i][j] = read.question('');
+            }
+        }
+        return arr;
+     }
 }
