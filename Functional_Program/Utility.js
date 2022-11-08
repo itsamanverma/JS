@@ -133,5 +133,37 @@ module.exports = {
             }
         }
         return arr;
-     }
+     },
+     /* create the module to take user input array */
+     inputreadLinearArray() {
+         let l = read.question('How many element you want enter in array \n');
+         let arr = new Array(l);
+ 
+         console.log('Enter ' + l + ' integer Element in the array ');
+         for (let index = 0; index < l; index++) {
+ 
+             arr[index] = Number(read.question(''));
+         }
+         return arr;
+     },
+     /**
+      * @des
+      */
+      calTriplets(arr){
+        let found = false;
+        for (let i = 0; i < arr.length-2; i++) {
+            for (let j = i+1; j < arr.length-1; j++){
+                for (let k = j+1; k < arr.length; k++) {
+                    if (arr[i]+arr[j]+arr[k] == 0) {
+                        console.log('{'+ arr[i],arr[j],arr[k]+'}');
+                        // console.log("<br>");
+                        found = true;
+                    }
+                }
+            }
+            if (found == false) {
+                console.log(" not exist");
+            }
+        }
+      }
 }
