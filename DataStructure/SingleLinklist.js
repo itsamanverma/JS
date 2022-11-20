@@ -141,7 +141,7 @@ class SingleLinklist {
         console.log(this.size);
     }
 
-    printList() {
+    printList() { // printthe link list 
 
         let curr = this.head;
         let str = "";
@@ -153,6 +153,20 @@ class SingleLinklist {
 
         }
         console.log(str);
+    }
+
+    linkListToArray() {
+
+        let arr = [];
+        let temp = this.head;
+
+        while (temp != null) {
+            for (let i = 0; i < this.size; i++) {
+                arr[i] = temp.data;
+                temp = temp.next;
+            }
+        }
+        return arr;
     }
 
 }
@@ -204,3 +218,5 @@ console.log(sll.removeFrom(3));
  
 // prints 10 20 60 40
 sll.printList();
+
+console.log(sll.linkListToArray());
