@@ -156,8 +156,7 @@ module.exports = {
                 for (let k = j+1; k < arr.length; k++) {
                     if (arr[i]+arr[j]+arr[k] == 0) {
                         console.log('{'+ arr[i],arr[j],arr[k]+'}');
-                        // console.log("<br>");
-                        found = true;
+                        found = true; 
                     }
                 }
             }
