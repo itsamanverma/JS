@@ -22,5 +22,6 @@ db.places.aggregate([
   *            calculated: 5962.597839230235,
   *            location: { type: 'Point', coordinates: [ -73.97, 40.77 ]
   *          }
-  *  }                                                                                                                     }
+  *  }                      
+  *                                                                                                }
   */
