@@ -135,5 +135,15 @@ module.exports = {
             throw Error('Negative Error');
         }
         return "YES";
+    },
+    /**
+     * LinkList Node Common Function
+     * @param val 
+     * @param next
+     */
+
+    ListNode(val,next){
+        this.val = ( val=== undefined? 0: val );
+        this.next = ( next=== undefined? null: next );
     }
 }   
