@@ -215,4 +215,33 @@ module.exports = {
       throw error;
     }
   },
+
+  /**
+   * @param arr1
+   * @param arr2
+   * @itsamanverma
+   * @function findMedianOfTwoSortedArray
+   */
+  findMedianOfTwoSortedArray(arr1, arr2) {
+    try {
+        let sortedArray;
+        if (arr1.length >= 1 && arr2.length >= 1) {
+            sortedArray = [...arr1, ...arr2];
+        } else {
+            sortedArray = arr1.length === 0 ? [...arr2] : [...arr1];
+        }
+
+        sortedArray.sort((a, b) => a - b); //  Sort the array in ascending order
+        const length = sortedArray.length; //  Length of the combined array
+
+        if (length % 2 === 1) {
+            return sortedArray[Math.floor(length / 2)];
+        } else {
+            const midIndex = length / 2;
+            return (sortedArray[midIndex - 1] + sortedArray[midIndex]) / 2;
+        }
+    } catch (error) {
+        throw error;
+    }
+  },
 };
