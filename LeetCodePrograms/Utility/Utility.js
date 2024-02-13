@@ -244,4 +244,92 @@ module.exports = {
         throw error;
     }
   },
+
+  /**
+ * @param {s, left, right}
+ * @itsamanverma
+ * @Author AMAN VERMA
+ * @function expandFromCenter
+ */
+expandFromCenter(s, left, right) {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+        left--;
+        right++;
+    }
+    return s.slice(left + 1, right);
+},
+
+  /**
+   * @param {str}
+   * @itsamanverma
+   * @function longestPalindromicSubStringUsingExpandAroundCenter
+   * @algorithm 1 Implementation of Manacher's Algorithm to find Longest Palindromic Substring from a given string
+   * @algorithm 2 Implementation of Expand Around Center Algorithm to Find Longest Palindrome String (take each character in the given string to be the midpoint of a palindrome and extend in both directions to discover the longest palindrome possible)
+   */
+   longestPalindromicSubStringUsingExpandAroundCenter(str) {
+    try {
+        if (str.length <= 1) {
+            return str;
+        }
+    
+        let longestPalindrome = '';
+    
+        for (let i = 0; i < str.length; i++) {
+            const palindrome1 = this.expandFromCenter(str, i, i); // Odd length palindrome
+            const palindrome2 = this.expandFromCenter(str, i, i + 1); // Even length palindrome
+            const currentLongest = palindrome1.length > palindrome2.length ? palindrome1 : palindrome2;
+    
+            if (currentLongest.length > longestPalindrome.length) {
+                longestPalindrome = currentLongest;
+            }
+        }
+    
+        return longestPalindrome;
+        
+    } catch (error) {
+        throw error;
+    }
+   },
+
+   /**
+   * @param {str}
+   * @itsamanverma
+   * @function longestPalindromicSubStringUsingBruteForce
+   * @algorithhm Brute Force Algorithm to find Longest Palindrome Substring
+   * @TimeComplexity O(n power 3)
+   */
+   longestPalindromicSubStringUsingBruteForce(str) {
+    try {
+        const n = str.length;
+        let longestSubstring = '';
+        for (let i = 0; i < n; i++) {
+            for (let j = i+1; j <= n; j++) {
+                const substring = str.slice(i, j);
+                if (this.isPalindrome(substring) && substring.length >  longestSubstring.length) {        
+                    longestSubstring = substring;
+                }
+            }
+        }
+        return longestSubstring;
+    } catch (error) {
+        throw error;
+    } 
+   },
+
+   /**
+    * 
+    * @param {*} str 
+    * @returns boolean
+    */
+   isPalindrome(str) {
+    const len = str.length;
+    for (let i = 0; i < len / 2; i++) {
+        if (str[i] !== str[len - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+},
+
+
 };
