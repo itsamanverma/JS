@@ -19,7 +19,7 @@ let longestPalindromicSubString = () => {
     userInput.question("Enter the string to find longest palindromic substring: ", (string) => {
         try {
             if (string.length > 0 ) {
-                console.log("longest palindromic substring", utility.longestPalindromicSubStringUsingExpandAroundCenter(string));
+                console.log("longest palindromic substring", utility.longestPalindromicSubStringUsingExpandFromCenter(string));
             }else{
                 console.log("Enter the value string to find longest Palindromic substring.");
             }

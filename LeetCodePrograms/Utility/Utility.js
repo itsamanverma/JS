@@ -266,7 +266,7 @@ expandFromCenter(s, left, right) {
    * @algorithm 1 Implementation of Manacher's Algorithm to find Longest Palindromic Substring from a given string
    * @algorithm 2 Implementation of Expand Around Center Algorithm to Find Longest Palindrome String (take each character in the given string to be the midpoint of a palindrome and extend in both directions to discover the longest palindrome possible)
    */
-   longestPalindromicSubStringUsingExpandAroundCenter(str) {
+   longestPalindromicSubStringUsingExpandFromCenter(str) {
     try {
         if (str.length <= 1) {
             return str;
