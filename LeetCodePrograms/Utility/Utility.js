@@ -224,40 +224,40 @@ module.exports = {
    */
   findMedianOfTwoSortedArray(arr1, arr2) {
     try {
-        let sortedArray;
-        if (arr1.length >= 1 && arr2.length >= 1) {
-            sortedArray = [...arr1, ...arr2];
-        } else {
-            sortedArray = arr1.length === 0 ? [...arr2] : [...arr1];
-        }
+      let sortedArray;
+      if (arr1.length >= 1 && arr2.length >= 1) {
+        sortedArray = [...arr1, ...arr2];
+      } else {
+        sortedArray = arr1.length === 0 ? [...arr2] : [...arr1];
+      }
 
-        sortedArray.sort((a, b) => a - b); //  Sort the array in ascending order
-        const length = sortedArray.length; //  Length of the combined array
+      sortedArray.sort((a, b) => a - b); //  Sort the array in ascending order
+      const length = sortedArray.length; //  Length of the combined array
 
-        if (length % 2 === 1) {
-            return sortedArray[Math.floor(length / 2)];
-        } else {
-            const midIndex = length / 2;
-            return (sortedArray[midIndex - 1] + sortedArray[midIndex]) / 2;
-        }
+      if (length % 2 === 1) {
+        return sortedArray[Math.floor(length / 2)];
+      } else {
+        const midIndex = length / 2;
+        return (sortedArray[midIndex - 1] + sortedArray[midIndex]) / 2;
+      }
     } catch (error) {
-        throw error;
+      throw error;
     }
   },
 
   /**
- * @param {s, left, right}
- * @itsamanverma
- * @Author AMAN VERMA
- * @function expandFromCenter
- */
-expandFromCenter(s, left, right) {
+   * @param {s, left, right}
+   * @itsamanverma
+   * @Author AMAN VERMA
+   * @function expandFromCenter
+   */
+  expandFromCenter(s, left, right) {
     while (left >= 0 && right < s.length && s[left] === s[right]) {
-        left--;
-        right++;
+      left--;
+      right++;
     }
     return s.slice(left + 1, right);
-},
+  },
 
   /**
    * @param {str}
@@ -266,70 +266,111 @@ expandFromCenter(s, left, right) {
    * @algorithm 1 Implementation of Manacher's Algorithm to find Longest Palindromic Substring from a given string
    * @algorithm 2 Implementation of Expand Around Center Algorithm to Find Longest Palindrome String (take each character in the given string to be the midpoint of a palindrome and extend in both directions to discover the longest palindrome possible)
    */
-   longestPalindromicSubStringUsingExpandFromCenter(str) {
+  longestPalindromicSubStringUsingExpandFromCenter(str) {
     try {
-        if (str.length <= 1) {
-            return str;
-        }
-    
-        let longestPalindrome = '';
-    
-        for (let i = 0; i < str.length; i++) {
-            const palindrome1 = this.expandFromCenter(str, i, i); // Odd length palindrome
-            const palindrome2 = this.expandFromCenter(str, i, i + 1); // Even length palindrome
-            const currentLongest = palindrome1.length > palindrome2.length ? palindrome1 : palindrome2;
-    
-            if (currentLongest.length > longestPalindrome.length) {
-                longestPalindrome = currentLongest;
-            }
-        }
-    
-        return longestPalindrome;
-        
-    } catch (error) {
-        throw error;
-    }
-   },
+      if (str.length <= 1) {
+        return str;
+      }
 
-   /**
+      let longestPalindrome = "";
+
+      for (let i = 0; i < str.length; i++) {
+        const palindrome1 = this.expandFromCenter(str, i, i); // Odd length palindrome
+        const palindrome2 = this.expandFromCenter(str, i, i + 1); // Even length palindrome
+        const currentLongest =
+          palindrome1.length > palindrome2.length ? palindrome1 : palindrome2;
+
+        if (currentLongest.length > longestPalindrome.length) {
+          longestPalindrome = currentLongest;
+        }
+      }
+
+      return longestPalindrome;
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  /**
    * @param {str}
    * @itsamanverma
    * @function longestPalindromicSubStringUsingBruteForce
    * @algorithhm Brute Force Algorithm to find Longest Palindrome Substring
    * @TimeComplexity O(n power 3)
    */
-   longestPalindromicSubStringUsingBruteForce(str) {
+  longestPalindromicSubStringUsingBruteForce(str) {
     try {
-        const n = str.length;
-        let longestSubstring = '';
-        for (let i = 0; i < n; i++) {
-            for (let j = i+1; j <= n; j++) {
-                const substring = str.slice(i, j);
-                if (this.isPalindrome(substring) && substring.length >  longestSubstring.length) {        
-                    longestSubstring = substring;
-                }
-            }
+      const n = str.length;
+      let longestSubstring = "";
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j <= n; j++) {
+          const substring = str.slice(i, j);
+          if (
+            this.isPalindrome(substring) &&
+            substring.length > longestSubstring.length
+          ) {
+            longestSubstring = substring;
+          }
         }
-        return longestSubstring;
+      }
+      return longestSubstring;
     } catch (error) {
-        throw error;
-    } 
-   },
+      throw error;
+    }
+  },
 
-   /**
-    * 
-    * @param {*} str 
-    * @returns boolean
-    */
-   isPalindrome(str) {
+  /**
+   *
+   * @param {*} str
+   * @returns boolean
+   */
+  isPalindrome(str) {
     const len = str.length;
     for (let i = 0; i < len / 2; i++) {
-        if (str[i] !== str[len - 1 - i]) {
-            return false;
-        }
+      if (str[i] !== str[len - 1 - i]) {
+        return false;
+      }
     }
     return true;
-},
+  },
 
+  /**
+   * @params str
+   * @return  stringTo32bit
+   */
+  stringTo32BitInteger(s) {
+    const INT_MAX = 2 ** 31 - 1;
+    const INT_MIN = -(2 ** 31);
 
+    let i = 0,
+      sign = 1,
+      result = 0;
+ 
+    // 1. Skip leading whitespaces
+    while (s[i] === " ") i++;
+
+    // 2. Handle optional sign
+    if (s[i] === "+" || s[i] === "-") {
+      sign = s[i] === "-" ? -1 : 1;
+      i++;
+    }
+
+    // 3. Read digits and build the result
+    while (i < s.length && s[i] >= "0" && s[i] <= "9") {
+      const digit = s.charCodeAt(i) - 48;
+
+      // 4. Clamp if overflow is about to happen
+      if (
+        result > Math.floor(INT_MAX / 10) ||
+        (result === Math.floor(INT_MAX / 10) && digit > INT_MAX % 10)
+      ) {
+        return sign === 1 ? INT_MAX : INT_MIN;
+      }
+
+      result = result * 10 + digit;
+      i++;
+    }
+
+    return result * sign;
+  },
 };
